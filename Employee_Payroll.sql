@@ -17,3 +17,7 @@ INSERT INTO employee_payroll (name, salary, start) VALUES
     ('Shivam', 800000.0, '2020-10-08');
     
 SELECT * FROM employee_payroll;
+
+SELECT salary FROM employee_payroll WHERE name = 'Krati';
+SELECT * FROM employee_payroll 
+	WHERE start BETWEEN CAST('2021-07-07' AS DATE) AND DATE(NOW());
