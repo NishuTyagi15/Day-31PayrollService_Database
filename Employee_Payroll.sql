@@ -29,3 +29,7 @@ DESCRIBE employee_payroll;
 SELECT * FROM employee_payroll;
 UPDATE employee_payroll set salary = 900000.0 WHERE name = 'Nishu';
 SELECT * FROM employee_payroll;
+
+SELECT gender, SUM(salary) FROM employee_payroll WHERE gender = 'Female' GROUP BY gender;
+SELECT AVG(salary) FROM employee_payroll WHERE gender = 'Female' GROUP BY gender;
+SELECT gender, COUNT(name) FROM employee_payroll GROUP BY gender;
