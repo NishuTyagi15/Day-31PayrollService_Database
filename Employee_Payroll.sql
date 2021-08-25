@@ -50,3 +50,28 @@ UPDATE employee_payroll set department = 'Content' WHERE id = 1;
 UPDATE employee_payroll set department = 'Content' WHERE id = 2;
 UPDATE employee_payroll set department = 'Technology' WHERE id = 3;
 select * from employee_payroll;
+
+ALTER TABLE employee_payroll ADD basic_pay float AFTER salary;
+ALTER TABLE employee_payroll ADD deductions float AFTER basic_pay;
+ALTER TABLE employee_payroll ADD taxable_pay float AFTER deductions;
+ALTER TABLE employee_payroll ADD income_tax float AFTER taxable_pay;
+ALTER TABLE employee_payroll ADD net_pay float AFTER income_tax;
+describe employee_payroll;
+select * from employee_payroll;
+
+UPDATE employee_payroll set basic_pay = 40000.0 WHERE id = 2;
+UPDATE employee_payroll set basic_pay = 50000.0 WHERE id = 1;
+UPDATE employee_payroll set basic_pay = 45000.0 WHERE id = 3;
+UPDATE employee_payroll set deductions = 3000.0 WHERE id = 1;
+UPDATE employee_payroll set deductions = 1000.0 WHERE id = 2;
+UPDATE employee_payroll set deductions = 20000.0 WHERE id = 3;
+UPDATE employee_payroll set taxable_pay = 300.0 WHERE id = 1;
+UPDATE employee_payroll set taxable_pay = 150.0 WHERE id = 2;
+UPDATE employee_payroll set taxable_pay = 250.0 WHERE id = 3;
+UPDATE employee_payroll set income_tax = 2500.0 WHERE id = 1;
+UPDATE employee_payroll set income_tax = 1500.0 WHERE id = 2;
+UPDATE employee_payroll set income_tax = 2000.0 WHERE id = 3;
+UPDATE employee_payroll set net_pay = 52000.0 WHERE id = 1;
+UPDATE employee_payroll set net_pay = 42000.0 WHERE id = 2;
+UPDATE employee_payroll set net_pay = 47000.0 WHERE id = 3;
+select * from employee_payroll;
