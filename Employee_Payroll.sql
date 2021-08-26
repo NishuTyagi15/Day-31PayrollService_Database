@@ -75,3 +75,8 @@ UPDATE employee_payroll set net_pay = 52000.0 WHERE id = 1;
 UPDATE employee_payroll set net_pay = 42000.0 WHERE id = 2;
 UPDATE employee_payroll set net_pay = 47000.0 WHERE id = 3;
 select * from employee_payroll;
+
+INSERT INTO employee_payroll (name, phone, address, department, gender, salary, basic_pay, deductions, taxable_pay, income_tax, net_pay, start) VALUES
+('Terisa', 9887665675, 'Delhi', 'Sales', 'Female', 4000000.0, 3000000.0, 0.0, 0.0, 0.0, 0.0, '2020-01-11'),
+('Terisa', 9887665675, 'Delhi', 'Marketing', 'Female', 4000000.0, 3000000.0, 100000.0, 150000, 200000.0, 4000000.0, '2020-01-11');
+SELECT * FROM employee_payroll WHERE name = 'Terisa';
